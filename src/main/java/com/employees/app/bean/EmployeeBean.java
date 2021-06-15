@@ -1,20 +1,13 @@
-package com.employees.app.model;
+package com.employees.app.bean;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Column;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@Entity
-public class Employee implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false,updatable = false)
+public class EmployeeBean {
     private Long id;
     private String name;
     private String email;
@@ -24,7 +17,7 @@ public class Employee implements Serializable {
     @Column(nullable = false,updatable = false)
     private String employeeCode;
 
-    public Employee(String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
+    public EmployeeBean(String name, String email, String jobTitle, String phone, String imageUrl, String employeeCode) {
         this.name = name;
         this.email = email;
         this.jobTitle = jobTitle;
