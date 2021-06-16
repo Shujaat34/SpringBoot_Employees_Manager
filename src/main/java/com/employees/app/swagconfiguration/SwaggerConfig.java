@@ -19,7 +19,7 @@ public class SwaggerConfig {
     @Bean
     public Docket actionSwaggerApi() {
         return new Docket(DocumentationType.SWAGGER_2).groupName("E-2-E Api's").tags(
-                new Tag("Employee Api", "Repository for Users ")
+                new Tag("Employee Api", "Repository for Employees ")
         )
                 .apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.basePackage("com.employees.app")).
                         paths(regex("/.*")).build().pathMapping("/");
